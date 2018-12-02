@@ -1,4 +1,4 @@
-## PWMFanControllers
+## PWM Fan Controllers
 
 Non-MCU PWM Fan controllers
 
