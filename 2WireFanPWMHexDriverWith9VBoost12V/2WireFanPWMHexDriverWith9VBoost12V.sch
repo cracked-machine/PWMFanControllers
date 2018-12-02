@@ -1,0 +1,453 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:switches
+LIBS:relays
+LIBS:motors
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:mc34063
+LIBS:2WireFanPWMHexDriverWith9VBoost12V-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date "2001-01-01"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 "Powered by 9V battery. Boosted to 12V for Fan."
+Comment3 "Fan wiring: 1. Yellow=Positive 2. Black=Ground "
+Comment4 "Hi-Frequency pulse-width modulation (PWM) driver circuit for 2-wire fan."
+$EndDescr
+$Comp
+L 74HC14-RESCUE-4WireFanPWMHexDriverWith9VBoost12V U_PWM1
+U 1 1 5B74B88B
+P 7125 3650
+F 0 "U_PWM1" H 7275 3750 50  0000 C CNN
+F 1 "74HC14" H 7325 3550 50  0000 C CNN
+F 2 "Housings_DIP:DIP-14_W7.62mm_Socket" H 7125 3650 50  0001 C CNN
+F 3 "" H 7125 3650 50  0001 C CNN
+	1    7125 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74HC14-RESCUE-4WireFanPWMHexDriverWith9VBoost12V U_PWM1
+U 2 1 5B74B8C0
+P 9525 3650
+F 0 "U_PWM1" H 9675 3750 50  0000 C CNN
+F 1 "74HC14" H 9725 3550 50  0000 C CNN
+F 2 "Housings_DIP:DIP-14_W7.62mm_Socket" H 9525 3650 50  0001 C CNN
+F 3 "" H 9525 3650 50  0001 C CNN
+	2    9525 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C_PWMTIMER1
+U 1 1 5B74B982
+P 8175 3650
+F 0 "C_PWMTIMER1" V 8325 3400 50  0000 L CNN
+F 1 "10nF" V 8425 3550 50  0000 L CNN
+F 2 "Capacitors_THT:C_Rect_L7_W2.5_P5" H 8213 3500 50  0001 C CNN
+F 3 "" H 8175 3650 50  0001 C CNN
+	1    8175 3650
+	0    1    1    0   
+$EndComp
+Text Label 7075 4200 1    60   ~ 0
+GND
+Text Label 7075 3200 3    60   ~ 0
+12V
+Text Label 7850 2000 0    60   ~ 0
+12V
+$Comp
+L D D_PWM2
+U 1 1 5B74D205
+P 8775 5000
+F 0 "D_PWM2" H 8775 4900 50  0000 C CNN
+F 1 "SR102" H 8775 4800 50  0000 C CNN
+F 2 "Diodes_THT:Diode_DO-41_SOD81_Horizontal_RM10" H 8775 5000 50  0001 C CNN
+F 3 "" H 8775 5000 50  0001 C CNN
+	1    8775 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L D D_PWM1
+U 1 1 5B74D26B
+P 8775 4150
+F 0 "D_PWM1" H 8775 4250 50  0000 C CNN
+F 1 "SR102" H 8775 4350 50  0000 C CNN
+F 2 "Diodes_THT:Diode_DO-41_SOD81_Horizontal_RM10" H 8775 4150 50  0001 C CNN
+F 3 "" H 8775 4150 50  0001 C CNN
+	1    8775 4150
+	-1   0    0    1   
+$EndComp
+Text Label 3300 2425 1    60   ~ 0
+GND
+Text Label 4000 1800 0    60   ~ 0
+9V
+$Comp
+L L_Core_Iron_Small L_REG1
+U 1 1 5B76E2C8
+P 3200 3100
+F 0 "L_REG1" V 3300 2975 50  0000 L CNN
+F 1 "22uH" V 3375 3000 50  0000 L CNN
+F 2 "Inductors_THT:L_Radial_D7.5mm_P5.00mm_Fastron_07P" H 3200 3100 50  0001 C CNN
+F 3 "" H 3200 3100 50  0001 C CNN
+	1    3200 3100
+	0    -1   -1   0   
+$EndComp
+Text Label 2150 5150 1    60   ~ 0
+GND
+$Comp
+L R R_REG1
+U 1 1 5B76EB30
+P 3900 3550
+F 0 "R_REG1" V 3980 3550 50  0000 C CNN
+F 1 "180R" V 3900 3550 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 3830 3550 50  0001 C CNN
+F 3 "" H 3900 3550 50  0001 C CNN
+	1    3900 3550
+	0    1    1    0   
+$EndComp
+$Comp
+L R R_SC1
+U 1 1 5B76ECBD
+P 4200 4050
+F 0 "R_SC1" V 4280 4050 50  0000 C CNN
+F 1 "0.4R" V 4200 4050 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 4130 4050 50  0001 C CNN
+F 3 "" H 4200 4050 50  0001 C CNN
+	1    4200 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R_VREGOUT2
+U 1 1 5B76EEA4
+P 3950 5000
+F 0 "R_VREGOUT2" H 3650 4950 50  0000 C CNN
+F 1 "100K" H 3775 5050 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 3880 5000 50  0001 C CNN
+F 3 "" H 3950 5000 50  0001 C CNN
+	1    3950 5000
+	-1   0    0    1   
+$EndComp
+$Comp
+L R R_VREGOUT1
+U 1 1 5B76EEE8
+P 2550 4700
+F 0 "R_VREGOUT1" V 2630 4700 50  0000 C CNN
+F 1 "10K" V 2550 4700 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 2480 4700 50  0001 C CNN
+F 3 "" H 2550 4700 50  0001 C CNN
+	1    2550 4700
+	0    1    1    0   
+$EndComp
+$Comp
+L CP C_OUT1
+U 1 1 5B76F529
+P 3950 5600
+F 0 "C_OUT1" H 3975 5700 50  0000 L CNN
+F 1 "220uF" H 3975 5500 50  0000 L CNN
+F 2 "Capacitors_THT:CP_Radial_D5.0mm_P2.50mm" H 3988 5450 50  0001 C CNN
+F 3 "" H 3950 5600 50  0001 C CNN
+	1    3950 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP C_REGBP1
+U 1 1 5B76F7F2
+P 5000 3800
+F 0 "C_REGBP1" H 4575 3950 50  0000 L CNN
+F 1 "100uF" H 4725 3675 50  0000 L CNN
+F 2 "Capacitors_THT:CP_Radial_D5.0mm_P2.50mm" H 5038 3650 50  0001 C CNN
+F 3 "" H 5000 3800 50  0001 C CNN
+	1    5000 3800
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6675 3650 6675 3650
+Wire Wire Line
+	6675 3650 6675 5350
+Wire Wire Line
+	6675 5350 10300 5350
+Wire Wire Line
+	10300 5350 10300 3650
+Wire Wire Line
+	10300 3650 9975 3650
+Wire Wire Line
+	8325 3650 9075 3650
+Wire Wire Line
+	7575 3650 8025 3650
+Wire Wire Line
+	7075 3450 7075 3200
+Wire Wire Line
+	7075 3850 7075 4200
+Connection ~ 7650 3650
+Wire Wire Line
+	7850 2000 8700 2000
+Wire Wire Line
+	10000 4150 10000 4500
+Wire Wire Line
+	10000 4150 8925 4150
+Wire Wire Line
+	10000 5000 8925 5000
+Wire Wire Line
+	10000 4700 10000 5000
+Wire Wire Line
+	8475 5000 8625 5000
+Wire Wire Line
+	8475 3650 8475 5000
+Connection ~ 8475 3650
+Wire Wire Line
+	8625 4150 8475 4150
+Connection ~ 8475 4150
+Wire Wire Line
+	9900 4600 10300 4600
+Connection ~ 10300 4600
+Wire Wire Line
+	3000 1900 3300 1900
+Wire Wire Line
+	3000 2000 3300 2000
+Wire Wire Line
+	3300 2000 3300 2425
+Wire Wire Line
+	3400 1800 4000 1800
+Wire Wire Line
+	3100 3100 2550 3100
+Wire Wire Line
+	2550 3100 2550 3550
+Wire Wire Line
+	1725 3550 2725 3550
+Wire Wire Line
+	3300 3100 4200 3100
+Wire Wire Line
+	4200 3100 4200 3900
+Wire Wire Line
+	2725 3850 2150 3850
+Wire Wire Line
+	2725 4150 2550 4150
+Wire Wire Line
+	2250 4150 2150 4150
+Wire Wire Line
+	2150 4450 2725 4450
+Connection ~ 2150 4150
+Connection ~ 2150 4450
+Wire Wire Line
+	3625 3550 3750 3550
+Wire Wire Line
+	4200 3550 4050 3550
+Wire Wire Line
+	4200 3850 3625 3850
+Connection ~ 4200 3550
+Wire Wire Line
+	3625 4450 3950 4450
+Wire Wire Line
+	3950 4700 2700 4700
+Wire Wire Line
+	3950 4450 3950 4850
+Wire Wire Line
+	3950 5150 3950 5450
+Connection ~ 4200 3850
+Wire Wire Line
+	3625 4150 3850 4150
+Wire Wire Line
+	3850 4150 3850 4250
+Wire Wire Line
+	3850 4250 4650 4250
+Wire Wire Line
+	4200 4250 4200 4200
+Connection ~ 4200 4250
+Text Label 4650 3100 0    60   ~ 0
+9V
+Wire Wire Line
+	5000 3650 5000 3550
+Wire Wire Line
+	5000 3550 4650 3550
+Connection ~ 4650 3550
+Wire Wire Line
+	4650 4250 4650 3100
+Wire Wire Line
+	5000 3950 5000 4150
+Text Label 5000 4150 1    60   ~ 0
+GND
+Text Label 5000 5300 0    60   ~ 0
+12V
+Connection ~ 3950 4700
+$Comp
+L D D_REG1
+U 1 1 5B77240E
+P 1725 4100
+F 0 "D_REG1" V 1775 4325 50  0000 C CNN
+F 1 "1n5819" V 1675 4325 50  0000 C CNN
+F 2 "Diodes_THT:Diode_DO-41_SOD81_Horizontal_RM10" H 1725 4100 50  0001 C CNN
+F 3 "" H 1725 4100 50  0001 C CNN
+	1    1725 4100
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1725 3950 1725 3550
+Connection ~ 2550 3550
+Wire Wire Line
+	1725 4250 1725 5300
+Wire Wire Line
+	1725 5300 5000 5300
+Wire Wire Line
+	2150 3850 2150 5150
+Connection ~ 3950 5300
+Wire Wire Line
+	2400 4700 2150 4700
+Connection ~ 2150 4700
+Wire Wire Line
+	3950 5750 3950 5925
+Text Label 3950 5925 1    60   ~ 0
+GND
+$Comp
+L C C_REGTIMER1
+U 1 1 5B775224
+P 2400 4150
+F 0 "C_REGTIMER1" V 2200 4000 50  0000 L CNN
+F 1 "180pF" V 2275 4225 50  0000 L CNN
+F 2 "Capacitors_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" H 2438 4000 50  0001 C CNN
+F 3 "" H 2400 4150 50  0001 C CNN
+	1    2400 4150
+	0    1    1    0   
+$EndComp
+$Comp
+L Conn_01x03 J_TIMER1
+U 1 1 5B7742FF
+P 9700 4600
+F 0 "J_TIMER1" H 10050 4500 50  0000 C CNN
+F 1 "Conn_01x03" H 10000 4575 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 9700 4600 50  0001 C CNN
+F 3 "" H 9700 4600 50  0001 C CNN
+	1    9700 4600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Conn_01x02 J_PWRSW1
+U 1 1 5B774468
+P 3300 1350
+F 0 "J_PWRSW1" V 3475 1275 50  0000 C CNN
+F 1 "Conn_01x02" V 3400 1275 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 3300 1350 50  0001 C CNN
+F 3 "" H 3300 1350 50  0001 C CNN
+	1    3300 1350
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3300 1900 3300 1550
+Wire Wire Line
+	3400 1550 3400 1800
+Wire Wire Line
+	9900 4700 10000 4700
+Wire Wire Line
+	10000 4500 9900 4500
+Text Notes 9175 4750 0    43   ~ 0
+RV_TIMER1\nB1K\n
+Text Label 7175 5350 0    60   ~ 0
+PWM_FB
+Text Label 8625 3650 0    60   ~ 0
+PWM_RC
+$Comp
+L _MC34063 U_REG1
+U 1 1 5B777A19
+P 3175 4000
+F 0 "U_REG1" H 3175 4125 60  0000 C CNN
+F 1 "_MC34063" H 3175 3925 60  0000 C CNN
+F 2 "Housings_DIP:DIP-8_W7.62mm_Socket_LongPads" H 2975 4000 60  0001 C CNN
+F 3 "" H 2975 4000 60  0001 C CNN
+	1    3175 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Conn_01x02 J_PWR1
+U 1 1 5B7783CD
+P 2800 1900
+F 0 "J_PWR1" H 2800 2000 50  0000 C CNN
+F 1 "Conn_01x02" H 2800 1700 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 2800 1900 50  0001 C CNN
+F 3 "" H 2800 1900 50  0001 C CNN
+	1    2800 1900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Q_NPN_ECB Q_PWMDRIVE1
+U 1 1 5B78CD68
+P 8100 2875
+F 0 "Q_PWMDRIVE1" H 8300 2925 50  0000 L CNN
+F 1 "MJE340_NPN_ECB_" H 8300 2825 50  0000 L CNN
+F 2 "TO_SOT_Packages_THT:TO-220_Neutral123_Vertical" H 8300 2975 50  0001 C CNN
+F 3 "" H 8100 2875 50  0001 C CNN
+	1    8100 2875
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7650 3650 7650 2875
+Wire Wire Line
+	7650 2875 7900 2875
+Wire Wire Line
+	8200 3075 8200 3300
+Text Label 8200 3300 1    60   ~ 0
+GND
+$Comp
+L D D_PWMDRIVE1
+U 1 1 5B78D116
+P 8200 2250
+F 0 "D_PWMDRIVE1" V 8150 1925 50  0000 C CNN
+F 1 "1N4007" V 8250 1950 50  0000 C CNN
+F 2 "Diodes_THT:Diode_DO-41_SOD81_Horizontal_RM10" H 8200 2250 50  0001 C CNN
+F 3 "" H 8200 2250 50  0001 C CNN
+	1    8200 2250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8200 2400 8200 2675
+Wire Wire Line
+	8200 2000 8200 2100
+Connection ~ 8200 2550
+Wire Wire Line
+	8200 2550 8500 2550
+Connection ~ 8200 2000
+$Comp
+L Conn_01x02 J_FAN1
+U 1 1 5B78D6EE
+P 8900 2000
+F 0 "J_FAN1" H 8900 2100 50  0000 C CNN
+F 1 "Conn_01x02" H 8900 1800 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 8900 2000 50  0001 C CNN
+F 3 "" H 8900 2000 50  0001 C CNN
+	1    8900 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8500 2550 8500 2100
+Wire Wire Line
+	8500 2100 8700 2100
+$EndSCHEMATC

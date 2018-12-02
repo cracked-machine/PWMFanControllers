@@ -1,0 +1,226 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:switches
+LIBS:relays
+LIBS:motors
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:PWMHexFan-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 "Fan wiring: 1. Red=Positive 2. Black=Ground"
+Comment4 "Low-frequency pulse-width modulation (PWM) driver circuit for 2-wire fan."
+$EndDescr
+$Comp
+L 74HC14 U?
+U 1 1 5B74B88B
+P 3650 4500
+F 0 "U?" H 3800 4600 50  0000 C CNN
+F 1 "74HC14" H 3850 4400 50  0000 C CNN
+F 2 "" H 3650 4500 50  0001 C CNN
+F 3 "" H 3650 4500 50  0001 C CNN
+	1    3650 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74HC14 U?
+U 2 1 5B74B8C0
+P 5800 4500
+F 0 "U?" H 5950 4600 50  0000 C CNN
+F 1 "74HC14" H 6000 4400 50  0000 C CNN
+F 2 "" H 5800 4500 50  0001 C CNN
+F 3 "" H 5800 4500 50  0001 C CNN
+	2    5800 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 5B74B982
+P 4350 4500
+F 0 "C?" H 4375 4600 50  0000 L CNN
+F 1 "10nF" H 4375 4400 50  0000 L CNN
+F 2 "" H 4388 4350 50  0001 C CNN
+F 3 "" H 4350 4500 50  0001 C CNN
+	1    4350 4500
+	0    1    1    0   
+$EndComp
+Text Label 3600 5050 1    60   ~ 0
+GND
+Text Label 3600 4050 3    60   ~ 0
+VDD
+Text Label 4650 4300 1    60   ~ 0
+GND
+$Comp
+L D D?
+U 1 1 5B74BD7D
+P 4650 3075
+F 0 "D?" H 4650 3175 50  0000 C CNN
+F 1 "D" H 4650 2975 50  0000 C CNN
+F 2 "" H 4650 3075 50  0001 C CNN
+F 3 "" H 4650 3075 50  0001 C CNN
+	1    4650 3075
+	0    1    1    0   
+$EndComp
+Text Label 4650 2375 3    60   ~ 0
+VDD
+Wire Wire Line
+	3200 4500 2950 4500
+Wire Wire Line
+	2950 4500 2950 6200
+Wire Wire Line
+	2950 6200 6575 6200
+Wire Wire Line
+	6575 6200 6575 5250
+Wire Wire Line
+	6575 5250 6575 4500
+Wire Wire Line
+	6575 4500 6250 4500
+Wire Wire Line
+	5350 4500 4750 4500
+Wire Wire Line
+	4750 4500 4500 4500
+Wire Wire Line
+	4100 4500 4150 4500
+Wire Wire Line
+	4150 4500 4200 4500
+Wire Wire Line
+	3600 4300 3600 4050
+Wire Wire Line
+	3600 4700 3600 5050
+Wire Wire Line
+	4150 4500 4150 3850
+Wire Wire Line
+	4150 3850 4350 3850
+Connection ~ 4150 4500
+Wire Wire Line
+	4650 4050 4650 4300
+Wire Wire Line
+	4650 3225 4650 3550
+Wire Wire Line
+	4650 3550 4650 3650
+Wire Wire Line
+	4650 2375 4650 2650
+Wire Wire Line
+	4650 2650 4650 2925
+Connection ~ 4650 3550
+Connection ~ 4650 2650
+Wire Wire Line
+	5350 3550 5350 3350
+$Comp
+L POT RV?
+U 1 1 5B74D0A2
+P 5600 5250
+F 0 "RV?" V 5425 5250 50  0000 C CNN
+F 1 "B1K" V 5500 5250 50  0000 C CNN
+F 2 "" H 5600 5250 50  0001 C CNN
+F 3 "" H 5600 5250 50  0001 C CNN
+	1    5600 5250
+	1    0    0    1   
+$EndComp
+$Comp
+L D D?
+U 1 1 5B74D205
+P 5050 5500
+F 0 "D?" H 5050 5600 50  0000 C CNN
+F 1 "D" H 5050 5400 50  0000 C CNN
+F 2 "" H 5050 5500 50  0001 C CNN
+F 3 "" H 5050 5500 50  0001 C CNN
+	1    5050 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L D D?
+U 1 1 5B74D26B
+P 5050 5000
+F 0 "D?" H 5050 5100 50  0000 C CNN
+F 1 "D" H 5050 4900 50  0000 C CNN
+F 2 "" H 5050 5000 50  0001 C CNN
+F 3 "" H 5050 5000 50  0001 C CNN
+	1    5050 5000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5600 5100 5600 5000
+Wire Wire Line
+	5600 5000 5200 5000
+Wire Wire Line
+	5200 5500 5600 5500
+Wire Wire Line
+	5600 5500 5600 5400
+Wire Wire Line
+	4900 5500 4750 5500
+Wire Wire Line
+	4750 5500 4750 5000
+Wire Wire Line
+	4750 5000 4750 4500
+Connection ~ 4750 4500
+Wire Wire Line
+	4900 5000 4750 5000
+Connection ~ 4750 5000
+Wire Wire Line
+	5750 5250 6575 5250
+Connection ~ 6575 5250
+Wire Wire Line
+	4650 2650 5350 2650
+Wire Wire Line
+	5350 3550 4650 3550
+$Comp
+L Fan M?
+U 1 1 5B760014
+P 5350 3150
+F 0 "M?" H 5450 3350 50  0000 L CNN
+F 1 "Fan" H 5450 3050 50  0000 L TNN
+F 2 "" H 5350 3160 50  0001 C CNN
+F 3 "" H 5350 3160 50  0001 C CNN
+	1    5350 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5350 2650 5350 2850
+$Comp
+L Q_NPN_ECB Q?
+U 1 1 5B760134
+P 4550 3850
+F 0 "Q?" H 4750 3900 50  0000 L CNN
+F 1 "Q_NPN_ECB" H 4750 3800 50  0000 L CNN
+F 2 "" H 4750 3950 50  0001 C CNN
+F 3 "" H 4550 3850 50  0001 C CNN
+	1    4550 3850
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
